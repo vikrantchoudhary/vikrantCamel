@@ -47,10 +47,10 @@ public class PlaceOrderTest extends CamelSpringTestSupport{
 	        // Now try placing an order via HTTP       
 	        result.reset();
 	        result.expectedMessageCount(1);
-	        result.expectedBodiesReceived(new Order("gearbox", 5));
+	        result.expectedBodiesReceived(new Order("vikky", 2, "html"));
 	        
 	        String body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" 
-	            + "<order name=\"gearbox\" amount=\"5\"/>";
+	            + "<order CustomerName=\"vikky\" OrderID=\"2\" MessageType=\"hhhhh\" />";
 	        Object response = template.requestBody("http://localhost:8888/placeorder", body);
 	        // convert the response to a String
 	        String responseString = context.getTypeConverter().convertTo(String.class, response);

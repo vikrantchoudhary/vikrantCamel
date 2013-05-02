@@ -48,12 +48,15 @@ public class Order implements Serializable{
 	            return false;
 	        }
 	        Order that = (Order) other;
-	        return this.CustomerName.equals(that.CustomerName) && 
-	        		this.MessageType.equals(that.MessageType) && this.OrderID == that.OrderID;
+	        //return true;
+	        //return this.name.equals(that.name) && this.amount == that.amount;
+	        return this.CustomerName.equals(that.CustomerName) && this.OrderID == that.OrderID;
+	        		//this.MessageType.equals(that.MessageType) && 
 	    }
 	    
 	    @Override
 	    public String toString() {
+	    	 //return "Order[" + name + " , " + amount + "]";
 	        return "Order[" + CustomerName + " , " + OrderID + " , " + MessageType + "]";
 	    }
 
